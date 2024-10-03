@@ -13,7 +13,7 @@ int main(){
     }
 
     for(int i = 1; i<n; i++){
-        int temp = arr[i];  // temp = 1 (as per sample input array)
+        int temp = arr[i];  // temp = 10 (as per sample input array)
         int j = i-1;
         for(; j>=0; j--){
             if(arr[j]>temp){
