@@ -40,6 +40,7 @@ int main(){
     graph <int> g;
 
     for(int i = 0 ; i < m ; i++){
+        cout << "input the edges " << endl;
         int u, v;
         cin>>u >> v;
 
