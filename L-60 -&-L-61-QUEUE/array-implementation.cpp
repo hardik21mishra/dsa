@@ -1,4 +1,9 @@
 // Implementing a queue using array
+
+
+// problems: if we push n elements in n sized queue, and then if we pop an element, 
+//           technically there should be created a space to push another element ,
+//           but that's not happening here, its showing queue is full
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -63,6 +68,9 @@ int main(){
 
     q.display();
 
+    q.pop();
+    q.display();
+    q.push(7);
 
     return 0;
 }
