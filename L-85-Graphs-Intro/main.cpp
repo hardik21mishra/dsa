@@ -22,7 +22,7 @@ class graph{
             for(auto i : adj){
                 cout << i.first << "-> ";
                 for(auto j : i.second){
-                    cout << j << ", ";
+                    cout << j << ' ';
                 }
                 cout << endl;
             }

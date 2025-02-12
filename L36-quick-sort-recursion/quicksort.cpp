@@ -1,67 +1,54 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-// Function to partition the array
-int partition(int* arr, int s, int e) {
-    int pivot = arr[s];
-    int count = 0;
-    
-    // Count elements smaller than or equal to pivot
-    for (int i = s + 1; i <= e; i++) {
-        if (arr[i] <= pivot) {
-            count++;
-        }
-    }
+int partition(vector<int> &arr, int low, int high) {
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
 
-    // Place the pivot element at its correct position
-    int pivotIndex = s + count;
-    swap(arr[pivotIndex], arr[s]);
-
-    int i = s;
-    int j = e;
-    
-    // Partition the array
-    while (i < pivotIndex && j > pivotIndex) {
-        while (arr[i] < pivot) {
+    while (i < j) {
+        while (arr[i] <= pivot && i <= high - 1) {
             i++;
         }
-        while (arr[j] > pivot) {
+
+        while (arr[j] > pivot && j >= low + 1) {
             j--;
         }
-        if (i < pivotIndex && j > pivotIndex) {
-            swap(arr[i++], arr[j--]);
-        }
+        swap(arr[i], arr[j]);
     }
-    
-    return pivotIndex;
+    swap(arr[low], arr[j]);
+    return j;
 }
 
-// Function to perform QuickSort
-void quickSort(int* arr, int s, int e) {
-    // Base condition
-    if (s >= e) {
-        return;
+void qs(vector<int> &arr, int low, int high) {
+    if (low < high) {
+        int pIndex = partition(arr, low, high);
+        qs(arr, low, pIndex - 1);
+        qs(arr, pIndex + 1, high);
     }
-
-    // Partition the array and get the pivot index
-    int p = partition(arr, s, e);
-
-    // Recursively sort the left and right parts
-    quickSort(arr, s, p - 1);
-    quickSort(arr, p + 1, e);
 }
 
-int main() {
-    int arr[] = {5,2,7,8,41,2};
-    int size = sizeof(arr) / sizeof(arr[0]); // Correct size calculation
-    
-    quickSort(arr, 0, size - 1);
-    
-    // Print the sorted array
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << ' ';
+vector<int> quickSort(vector<int> arr) {
+    qs(arr, 0, arr.size() - 1);
+    return arr;
+}
+
+int main()
+{
+    vector<int> arr = {4, 6, 2, 5, 7, 9, 1, 3};
+    int n = arr.size();
+    cout << "Before Using quick Sort: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
     }
     cout << endl;
 
+    arr = quickSort(arr);
+    cout << "After Using quick sort: " << "\n";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
     return 0;
 }

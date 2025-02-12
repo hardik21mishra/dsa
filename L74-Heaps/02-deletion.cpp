@@ -32,15 +32,18 @@ class heap{
         }
 
         void deletefromHeap(){
+        // this function deletes to root node 
             if(size == 0) {
                 cout << "Nothing to delete" << endl;
                 cout << endl;
             }
 
+            // step 1 ---> swap first node with last node
             arr[1] = arr[size]; // step 1
-            size--; // step 2
+            size--; // step 2 ---> remove last node
 
-            // step 3
+
+            // step 3 ---> take root node to it's correct position
             int i = 1;
             while (i < size){
                 int leftIndex = 2 * i;
