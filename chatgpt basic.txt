@@ -7,3 +7,6 @@
 4.) error persists : WHERE AM I STILL WRONG?
 
 5.) syntax ? : WHAT IS THIS SYNTAX AND HOW DOES IT WORK?
+
+keeping the  code intact can you alter my code to give me a code which contains more good coding practices and make my code more good, I am not asking you to make optimised necessarily, just improve my already existing code, or if it is necessary pls you can also give me the optimised solution too
+

@@ -70,11 +70,10 @@ class heap{
 };
 int main(){
     heap h;
-    h.insert(50);
-    h.insert(55);
-    h.insert(53);
-    h.insert(52);
-    h.insert(54);
+    h.insert(4);
+    h.insert(3);
+    h.insert(2);
+    h.insert(6);
     h.print();
 
     h.deletefromHeap();
