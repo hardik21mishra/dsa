@@ -11,7 +11,7 @@ int solve(int *arr, int n, int k) {
 
     // Initialize the first window of size k
     for (int i = 0; i < k; i++) {
-        // Remove elements smaller than the current element for maxi deque
+        // Remove elements smaller than the current element for maxi deque 
         while (!maxi.empty() && arr[maxi.back()] <= arr[i])
             maxi.pop_back();
         // Remove elements greater than the current element for mini deque
